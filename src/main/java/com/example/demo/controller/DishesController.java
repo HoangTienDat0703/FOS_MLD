@@ -25,8 +25,8 @@ public class DishesController {
     }
 
     @PutMapping("/dishes/update")
-    private Dishes updateDishes(@RequestParam("id") Long id, @RequestBody Dishes dishes){
-        return iDishesService.updateDishes(id,dishes);
+    private Dishes updateDishes(@RequestBody Dishes dishes){
+        return iDishesService.updateDishes(dishes);
     }
 
     @DeleteMapping("/dishes/delete/{id}")

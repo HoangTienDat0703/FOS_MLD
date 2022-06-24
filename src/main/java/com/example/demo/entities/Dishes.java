@@ -7,14 +7,12 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "Dishes")
-@Setter
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Dishes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dishesId;
 
     @Column(name = "dishesName")

@@ -25,11 +25,11 @@ public class DishesService implements IDishesService {
     }
 
     @Override
-    public Dishes updateDishes(Long id, Dishes dishes) {
+    public Dishes updateDishes(Dishes dishes) {
         Category category = categoryRepository.findByCategoryId(dishes.getCategory().getCategoryId());
-        if(dishes!=null){
-            Dishes dishes1 = dishesRepository.getById(id);
-            if(dishes1!=null){
+        if(dishes != null){
+            Dishes dishes1 = dishesRepository.getById(dishes.getDishesId());
+            if(dishes1 != null){
                 dishes1.setDishesName(dishes.getDishesName());
                 dishes1.setDescription(dishes.getDescription());
                 dishes1.setDishImage(dishes.getDishImage());
@@ -37,6 +37,7 @@ public class DishesService implements IDishesService {
                 dishes1.setCategory(category);
                 dishes1.setCostPrice(dishes.getCostPrice());
                 dishes1.setSalePrice(dishes.getSalePrice());
+                dishes1.setStatus(dishes.getStatus());
 
                 return dishesRepository.save(dishes1);
             }

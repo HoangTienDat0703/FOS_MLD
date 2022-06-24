@@ -3,8 +3,6 @@ package com.example.demo.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
 
 @Data
 @Entity

@@ -1,6 +1,5 @@
 package com.example.demo.implementService;
 
-import com.example.demo.entities.Category;
 import com.example.demo.entities.Role;
 
 import java.util.List;

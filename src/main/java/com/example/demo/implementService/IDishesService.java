@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface IDishesService {
     public Dishes addDishes(Dishes dishes);
 
-    public Dishes updateDishes(Long id,Dishes dishes);
+    public Dishes updateDishes(Dishes dishes);
 
     public boolean deleteDishes(Long id);
 
