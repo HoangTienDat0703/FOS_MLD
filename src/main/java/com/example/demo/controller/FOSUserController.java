@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "https://project-for-fos-mld.herokuapp.com")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class FOSUserController {
