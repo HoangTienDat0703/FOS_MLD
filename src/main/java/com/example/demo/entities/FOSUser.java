@@ -15,6 +15,9 @@ public class FOSUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @Column(name = "fullName")
+    private String fullName;
+
     @Column(name = "userName")
     private String userName;
 
