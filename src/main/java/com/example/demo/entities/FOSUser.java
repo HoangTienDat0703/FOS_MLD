@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Table(name="FOSUser")
 @NoArgsConstructor
 @AllArgsConstructor
-@CrossOrigin
 public class FOSUser {
 
     @Id
