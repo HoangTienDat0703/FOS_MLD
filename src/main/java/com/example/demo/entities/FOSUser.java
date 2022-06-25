@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import lombok.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Table(name="FOSUser")
 @NoArgsConstructor
 @AllArgsConstructor
+@CrossOrigin
 public class FOSUser {
 
     @Id
