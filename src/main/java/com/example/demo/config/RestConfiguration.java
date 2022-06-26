@@ -22,7 +22,7 @@ public class RestConfiguration {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.setAllowedOriginPatterns(Arrays.asList("*"));
-        config.addAllowedOrigin("*");
+//        config.addAllowedOrigin("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("GET");
