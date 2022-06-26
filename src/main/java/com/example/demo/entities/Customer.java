@@ -32,11 +32,4 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name = "feedBackId", nullable = true)
-    private FeedBack feedBack;
-
-    @ManyToOne
-    @JoinColumn(name = "requestId", nullable = true)
-    private Request request;
 }

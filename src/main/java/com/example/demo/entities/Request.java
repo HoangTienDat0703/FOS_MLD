@@ -21,4 +21,8 @@ public class Request {
 
     @Column(name = "requestDetail")
     private String requestDetail;
+
+    @ManyToOne
+    @JoinColumn(name = "customerId", nullable = true)
+    private Customer customer;
 }

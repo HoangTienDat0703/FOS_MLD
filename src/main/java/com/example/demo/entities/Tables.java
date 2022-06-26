@@ -22,4 +22,8 @@ public class Tables {
 
     @Column(name = "status")
     private String status;
+
+    @OneToOne
+    @JoinColumn(name = "QRCodeID", nullable = true)
+    private QRCode qrCode;
 }

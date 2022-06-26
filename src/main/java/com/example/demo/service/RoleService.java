@@ -20,6 +20,14 @@ public class RoleService implements IRoleService {
 
     @Override
     public Role updateRole(Role role) {
+        if(role != null){
+            Role role1 = roleRepository.findByRoleId(role.getRoleId());
+            if(role1 != null){
+                role1.setRoleName(role.getRoleName());
+                return roleRepository.save(role1);
+            }
+        }
+
         return null;
     }
 

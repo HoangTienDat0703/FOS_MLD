@@ -26,7 +26,7 @@ public class FOSUserService implements IFOSUserService {
 
     @Override
     public FOSUser updateFOSUser(FOSUser fosUser) {
-        Role role = roleRepository.findByRoleId(fosUser.getUserId());
+        Role role = roleRepository.findByRoleId(fosUser.getRole().getRoleId());
         if(fosUser != null){
             FOSUser fosUser1 = fosUserRepository.getById(fosUser.getUserId());
             if(fosUser1 != null){
