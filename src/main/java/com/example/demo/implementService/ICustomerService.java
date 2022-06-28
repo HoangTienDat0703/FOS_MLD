@@ -2,6 +2,8 @@ package com.example.demo.implementService;
 
 import com.example.demo.entities.Category;
 import com.example.demo.entities.Customer;
+import com.example.demo.response.ResponseObject;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,5 +17,5 @@ public interface ICustomerService {
 
     public List<Customer> getAllCustomer();
 
-    public Optional<Customer> getCustomerById(Long id);
+    public ResponseEntity<ResponseObject> getCustomerById(Long id);
 }

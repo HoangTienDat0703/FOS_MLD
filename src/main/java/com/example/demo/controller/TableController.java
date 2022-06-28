@@ -2,7 +2,9 @@ package com.example.demo.controller;
 
 import com.example.demo.entities.Tables;
 import com.example.demo.implementService.ITablesService;
+import com.example.demo.response.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,6 +33,11 @@ public class TableController {
     @DeleteMapping("/tables/delete/{id}")
     public boolean deleteTable(@PathVariable("id") Long id){
         return iTablesService.deleteTable(id);
+    }
+
+    @GetMapping("/tables/{id}")
+    ResponseEntity<ResponseObject> findTableById(@PathVariable Long id){
+        return iTablesService.getTableById(id);
     }
 
 }

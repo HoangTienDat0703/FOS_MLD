@@ -1,6 +1,8 @@
 package com.example.demo.implementService;
 
 import com.example.demo.entities.FOSUser;
+import com.example.demo.response.ResponseObject;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,5 +16,5 @@ public interface IFOSUserService {
 
     public List<FOSUser> getAllFOSUser();
 
-    public Optional<FOSUser> getFOSUserById(Long id);
+    public ResponseEntity<ResponseObject> getFOSUserById(Long id);
 }

@@ -2,10 +2,14 @@ package com.example.demo.service;
 
 import com.example.demo.entities.Category;
 import com.example.demo.entities.Dishes;
+import com.example.demo.entities.FOSUser;
 import com.example.demo.implementService.IDishesService;
 import com.example.demo.repo.CategoryRepository;
 import com.example.demo.repo.DishesRepository;
+import com.example.demo.response.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,7 +65,16 @@ public class DishesService implements IDishesService {
     }
 
     @Override
-    public Optional<Dishes> getFoodById(Long id) {
-        return Optional.empty();
+    public ResponseEntity<ResponseObject> getDishesById(Long id) {
+        Optional<Dishes> dishes = dishesRepository.findById(id);
+        if(dishes.isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseObject("ok", "succsessfully",true, dishes)
+            );
+        }else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    new ResponseObject("fail", "Can not find dishesId: "+id,false,"null")
+            );
+        }
     }
 }

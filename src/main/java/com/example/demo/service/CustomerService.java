@@ -1,9 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.entities.Customer;
+import com.example.demo.entities.FOSUser;
 import com.example.demo.implementService.ICustomerService;
 import com.example.demo.repo.CustomerRepository;
+import com.example.demo.response.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,7 +56,16 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Optional<Customer> getCustomerById(Long id) {
-        return Optional.empty();
+    public ResponseEntity<ResponseObject> getCustomerById(Long id) {
+        Optional<Customer> customer = customerRepository.findById(id);
+        if(customer.isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseObject("ok", "succsessfully",true, customer)
+            );
+        }else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    new ResponseObject("fail", "Can not find customerId: "+id,false,"null")
+            );
+        }
     }
 }

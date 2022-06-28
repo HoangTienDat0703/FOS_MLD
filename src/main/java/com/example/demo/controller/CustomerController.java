@@ -3,7 +3,9 @@ package com.example.demo.controller;
 import com.example.demo.entities.Customer;
 import com.example.demo.entities.FOSUser;
 import com.example.demo.implementService.ICustomerService;
+import com.example.demo.response.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,6 +35,11 @@ public class CustomerController {
     @DeleteMapping("/customers/delete/{id}")
     public boolean deletecustomers(@PathVariable("id") Long id){
         return iCustomerService.deleteCustomer(id);
+    }
+
+    @GetMapping("/customers/{id}")
+    ResponseEntity<ResponseObject> findCustomerById(@PathVariable Long id){
+        return iCustomerService.getCustomerById(id);
     }
 
 
