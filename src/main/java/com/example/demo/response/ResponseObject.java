@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class ResponseObject {
     private String status;
     private String message;
-    private boolean suscess;
+    private boolean success;
     private Object data;
 }
