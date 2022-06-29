@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -23,7 +22,9 @@ public class FOSUserController {
     }
 
     @PostMapping("/users/add")
-    private FOSUser saveFOSUser(@RequestBody FOSUser fosUser){
+    private FOSUser saveFOSUser(@
+
+                                            RequestBody FOSUser fosUser){
         return ifosUserService.addFOSUser(fosUser);
     }
 

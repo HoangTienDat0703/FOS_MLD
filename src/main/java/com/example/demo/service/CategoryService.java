@@ -1,9 +1,13 @@
 package com.example.demo.service;
 
 import com.example.demo.entities.Category;
+import com.example.demo.entities.Tables;
 import com.example.demo.implementService.ICategoryService;
 import com.example.demo.repo.CategoryRepository;
+import com.example.demo.response.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -50,7 +54,16 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public Optional<Category> getCategoryById(Long id) {
-        return Optional.empty();
+    public ResponseEntity<ResponseObject> getCategoryById(Long id) {
+        Optional<Category> category = categoryRepository.findById(id);
+        if(category.isPresent()){
+            return ResponseEntity.status(HttpStatus.OK).body(
+                    new ResponseObject("ok", "succsessfully",true, category)
+            );
+        }else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+                    new ResponseObject("fail", "Can not find CategoryID: "+id,false,"null")
+            );
+        }
     }
 }
