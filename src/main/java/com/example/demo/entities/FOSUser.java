@@ -51,4 +51,15 @@ public class FOSUser {
     @JoinColumn(name = "roleId", nullable = true)
     private Role role;
 
+    public FOSUser(String fullName, String userName, String password, String gender, String contact, String email, Integer status, String profileImage, Role role) {
+        this.fullName = fullName;
+        this.userName = userName;
+        this.password = password;
+        this.gender = gender;
+        this.contact = contact;
+        this.email = email;
+        this.status = status;
+        this.profileImage = profileImage;
+        this.role = role;
+    }
 }
