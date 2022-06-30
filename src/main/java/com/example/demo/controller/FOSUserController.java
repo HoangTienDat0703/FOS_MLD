@@ -22,9 +22,7 @@ public class FOSUserController {
     }
 
     @PostMapping("/users/add")
-    private FOSUser saveFOSUser(@
-
-                                            RequestBody FOSUser fosUser){
+    private FOSUser saveFOSUser(@RequestBody FOSUser fosUser){
         return ifosUserService.addFOSUser(fosUser);
     }
 

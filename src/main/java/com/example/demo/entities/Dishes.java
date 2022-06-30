@@ -40,4 +40,14 @@ public class Dishes {
     @JoinColumn(name = "categoryId", nullable = true)
     private Category category;
 
+    public Dishes(String dishesName, String description, String dishImage, Long salePrice, Long costPrice, Long discount, Integer status, Category category) {
+        this.dishesName = dishesName;
+        this.description = description;
+        this.dishImage = dishImage;
+        this.salePrice = salePrice;
+        this.costPrice = costPrice;
+        this.discount = discount;
+        this.status = status;
+        this.category = category;
+    }
 }

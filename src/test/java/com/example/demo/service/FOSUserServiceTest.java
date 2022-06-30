@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import com.example.demo.entities.FOSUser;
 import com.example.demo.entities.Role;

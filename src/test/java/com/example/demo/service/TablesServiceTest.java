@@ -1,12 +1,9 @@
-package com.example.demo;
+package com.example.demo.service;
 
-import com.example.demo.entities.FOSUser;
 import com.example.demo.entities.QRCode;
-import com.example.demo.entities.Role;
 import com.example.demo.entities.Tables;
 import com.example.demo.repo.QRCodeRepository;
 import com.example.demo.repo.TableRepository;
-import com.example.demo.service.TableService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -60,8 +57,8 @@ public class TablesServiceTest {
 
     @Test
     public void updateTableTest(){
-        QRCode qrCodeExpect = new QRCode(1l, "abc");
-        QRCode qrCodeUpdate = new QRCode(2l, "abcd");
+        QRCode qrCodeExpect = new QRCode(1l, "abc","link1");
+        QRCode qrCodeUpdate = new QRCode(2l, "abcd","link2");
 
         Tables oldTable = new Tables(1l,"4","1",qrCodeExpect);
         Tables tableUpdate = new Tables(1l,"4","1",qrCodeUpdate);
@@ -77,8 +74,8 @@ public class TablesServiceTest {
 
     @Test
     public void deleteTableByIdTest(){
-        QRCode qrCodeExpect = new QRCode(1l, "abc");
-        QRCode qrCodeUpdate = new QRCode(2l, "abcd");
+        QRCode qrCodeExpect = new QRCode(1l, "abc","link1");
+        QRCode qrCodeUpdate = new QRCode(2l, "abcd","link2");
         Tables table = new Tables(1l,"4","1",qrCodeExpect);
         Tables actual = new Tables(1l,"4","1",qrCodeUpdate);
         Mockito.when(tableRepository.getById(table.getTableId())).thenReturn(actual);

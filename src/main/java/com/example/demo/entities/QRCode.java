@@ -19,4 +19,7 @@ public class QRCode {
 
     @Column(name = "QRCodeImage")
     private String QRCodeImage;
+
+    @Column(name = "QRCodeLink")
+    private String QRCodeLink;
 }
