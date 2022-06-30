@@ -32,4 +32,11 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
+    public Customer(String firstName, String lastName, String contact, String email, String address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contact = contact;
+        this.email = email;
+        this.address = address;
+    }
 }
